@@ -43,8 +43,8 @@
                     <li class="{{ Request::is('Einkaufswagen*') ? 'current' : '' }}">
                         <!-- Top Cart
                         ============================================= -->
-                        <div id="top-cart">
-                            <a href="{{ route('Einkaufswagen') }}" ><i class="icon-shopping-cart"></i><span>{{ Cart::count() }}</span></a>
+                        <div id="top-cart" style="position: relative; float: left; display: block;" >
+                            <a href="{{ route('Einkaufswagen') }}" ><div><i class="icon-shopping-cart"></i></div><span>{{ Cart::count() }}</span></a>
                         </div><!-- #top-cart end -->
                     </li>
                 </ul>

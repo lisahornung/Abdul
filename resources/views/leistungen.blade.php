@@ -6,13 +6,13 @@
             <div class="container clear-bottommargin clearfix">
 
                 <div class="heading-block center">
-                    <h2>Services</h2>
+                    <h2>Leistungen</h2>
                     <span>Meine Leistungen im Überblick</span>
                 </div>
 
                 <div class="row">
                     <div class="col-md-4 bottommargin">
-                        <img data-animate="fadeInLeftBig" src="img/work.jpeg" alt="iPhone" class="center-block">
+                        <img data-animate="fadeInLeftBig" src="img/leistungen.jpg" alt="Cafe" class="center-block">
                     </div>
 
                     <div class="col-md-4 col-sm-6 topmargin bottommargin">
@@ -80,8 +80,32 @@
                     </div>
                 </div>
 
+                <div class="line"></div> </br> </br>
+
             </div>
+
+
+
+            <div class="container clear-bottommargin clearfix">
+
+                <div class="heading-block center">
+                    <h2>Beratung und Vermittlung</h2>
+                    <span>30 Jahre Erfahrung</span>
+                </div>
+
+                <div class="row">
+                    <p style="text-align: center">
+                        Mit über 30 Jahren Erfahrung stehe Ich Ihnen gerne zur Beratung für die Wahl der <b>Location</b>, <b>Caterers</b>, <b>Fotografen</b> oder <b>DJ</b> zur Verfügung.
+                    </p>
+                </div>
+
+            </div>
+
+
+
+
         </div>
+
 
         {{--<div class="content-wrap">--}}
             {{--<div class="container clearfix">--}}

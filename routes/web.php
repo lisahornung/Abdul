@@ -19,7 +19,9 @@ Route::get('/Agentur', function() { return view('agentur'); })->name('Agentur');
 Route::get('/Leistungen', function() { return view('leistungen'); })->name('Leistungen');
 Route::get('/Pakete', function() { return view('pakete'); })->name('Pakete');
 Route::get('/Kontakt', function() { return view('kontakt'); })->name('Kontakt');
+Route::post('/Kontakt', 'VermietungController@kontakt')->name('KontaktPOST');
 Route::get('/Impressum', function() { return view('impressum'); })->name('Impressum');
+Route::get('/Salsaevent', function() { return view('salsaevent'); })->name('Salsaevent');
 
 
 /*
@@ -35,6 +37,26 @@ Route::post('/Bestellung', 'VermietungController@bestellung')->name('Bestellung'
 Route::get('/Login', function() {return view('login'); })->name('Login');
 Route::post('/Login', 'LoginController@authenticate')->name('authenticate');
 Route::get('/Uebersicht', 'VermietungController@uebersicht')->name('Uebersicht');
+
+
+/*
+ * OLD PAGE REDIRECTS
+ */
+Route::get('/DJ-Abdul', function(){ return Redirect::to('http://djabdul.de/', 301);});
+Route::get('/DJ-Abdul/events', function(){ return Redirect::to('http://djabdul.de/', 301);});
+Route::get('/DJ-Abdul/events/firmenevents', function(){ return Redirect::to('http://djabdul.de/', 301);});
+Route::get('/DJ-Abdul/events/hochzeiten', function(){ return Redirect::to('http://djabdul.de/', 301);});
+Route::get('/DJ-Abdul/events/salsa-events', function(){ return Redirect::to('http://djabdul.de/Salsaevent', 301);});
+Route::get('/DJ-Abdul/vermietung', function(){ return Redirect::to('http://djabdul.de/Vermietung', 301);});
+Route::get('/DJ-Abdul/vermietung/anlagentechnik', function(){ return Redirect::to('http://djabdul.de/Vermietung', 301);});
+Route::get('/DJ-Abdul/vermietung/dj-technik', function(){ return Redirect::to('http://djabdul.de/Vermietung', 301);});
+Route::get('/DJ-Abdul/vermietung/lichttechnik', function(){ return Redirect::to('http://djabdul.de/Vermietung', 301);});
+Route::get('/DJ-Abdul/galerie', function(){ return Redirect::to('http://djabdul.de/Agentur', 301);});
+Route::get('/DJ-Abdul/referenzen', function(){ return Redirect::to('http://djabdul.de/Agentur', 301);});
+Route::get('/DJ-Abdul/anfrage', function(){ return Redirect::to('http://djabdul.de/Kontakt', 301);});
+
+
+
 
 
 

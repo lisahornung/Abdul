@@ -1,12 +1,24 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="en-US">
+<html dir="ltr" lang="de">
 <head>
 
         <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-        <meta name="author" content="SemiColonWeb" />
+        <meta name="author" content="Dirk Hornung" />
 
-        <!-- Stylesheets
-        ============================================= -->
+        <meta name="description" content="Fuldaer DJ für Hochzeiten, Geburtstage und Firmenevents. Vermieter von Anlagen und Beleuchtung." />
+        <meta name="keywords" content="DJ, Hochzeit, Geburtstag, Firmenevent" />
+
+        <!-- for Facebook -->
+        <meta property="og:title" content="DJ Abdul" />
+        <meta property="og:description" content="Fuldaer DJ für Hochzeiten, Geburtstage und Firemenevents. Vermieter von Anlagen und Beleuchtung." />
+
+
+    <!-- Favicon -->
+        <link rel="shortcut icon" href="{{asset('img/favicon.jpg')}}" />
+    <!-- / -->
+
+    <!-- Stylesheets
+    ============================================= -->
         <link href="http://fonts.googleapis.com/css?family=Lato:300,400,400italic,600,700|Raleway:300,400,500,600,700|Crete+Round:400italic" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.css')}}"/>
         <link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}"/>
@@ -126,7 +138,11 @@
                     }
                     ?>
                     Copyrights &copy; <?php echo date('Y'); ?> All Rights Reserved by DJ Abdul<br>
-                    <div class="copyright-links"><a href="{{ Route('Login') }}">Login</a> <a href="{{ Route('Impressum') }}">Impressum</a></div>
+                    <div class="copyright-links">
+                        <a href="{{ Route('Login') }}">Login</a>
+                        <a href="{{ Route('Impressum') }}">Impressum</a>
+                        <a href="{{ Route('Salsaevent') }}">Salsaevent</a>
+                    </div>
                 </div>
 
                 <div class="col_half col_last tright">
@@ -338,7 +354,9 @@
 </script>
 
 <script>
+    {{--Einkaufswagen Form validation: https://jqueryvalidation.org/validate/ --}}
     $("#einkaufswagenForm").validate();
+
 </script>
 </body>
 </html>

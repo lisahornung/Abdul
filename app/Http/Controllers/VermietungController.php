@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Mail;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Redirect;
 use App\ShopItem;
@@ -26,8 +27,6 @@ class VermietungController extends Controller
     }
 
     public function removeItem($id) {
-
-
 
         $cart = Cart::content()->all();
 
@@ -104,22 +103,60 @@ class VermietungController extends Controller
         $order->period = $request->period;
         $order->comment = $request->comment;
 
-        $order->save();
+        if($request->action == "Anfragen") {
 
-        $cart = Cart::content()->all();
-        $orderedItems = [];
-        foreach ($cart as $item) {
-            $orderedItem = new OrderedItem();
-            $orderedItem->name = $item->name;
-            $orderedItem->price = $item->price;
-            array_push($orderedItems, $orderedItem);
+            $order->save();
+            $cart = Cart::content()->all();
+            $orderedItems = [];
+            foreach ($cart as $item) {
+                $orderedItem = new OrderedItem();
+                $orderedItem->name = $item->name;
+                $orderedItem->price = $item->price;
+                array_push($orderedItems, $orderedItem);
+            }
+
+            $orderedItem = $order->orderedItems()->saveMany($orderedItems);
+
+            $data = array(
+                'order' => $order,
+                'orderedItems' => $orderedItems,
+                'tax' => Cart::tax(),
+                'total' => Cart::total()
+            );
+
+            Mail::send('emails.anfrageKunde', $data, function ($m) use ($request) {
+                $m->from("info@djabdul.de", "DJ Abdul" );
+
+                $m->to($request->email, $request->name . " " . $request->lastname)->subject('djabdul.de - Anfrage');
+            });
+
+            Mail::send('emails.anfrageAbdul', $data, function ($m) {
+                $m->from('info@djabdul.de', 'DJ Abdul');
+
+                $m->to("info@djabdul.de", "Dirk Hornung")->subject('Neue Anfrage!');
+            });
+
+            Cart::destroy();
+
+            return redirect('Bestellung');
+        } else { // Entfernen button clicked
+            $id = $request->action;
+
+            $cart = Cart::content()->all();
+
+            $itemInCart = false;
+            foreach ($cart as $item) {
+                if($item->id == $id) {
+                    $itemInCart = true;
+                    $itemRowId = $item->rowId;
+                    $itemName = $item->name;
+                }
+            }
+            Cart::remove($itemRowId);
+            $this->FlashNotification("$itemName wurde aus dem Warenkorb entfernt.", "alert-danger");
+
+            return view('einkaufswagen', compact('order'));
         }
-
-        $orderedItem = $order->orderedItems()->saveMany($orderedItems);
-
-        Cart::destroy();
-
-        return redirect('Bestellung');
 
     }
 
@@ -131,8 +168,24 @@ class VermietungController extends Controller
     }
 
     public function BestellungErfolgreich() {
-
         return view('shop/bestellung');
+    }
+
+    public function Kontakt(\Illuminate\Http\Request $request) {
+        $data = array(
+          'name'=>$request->name,
+          'email'=>$request->email,
+          'telefon'=>$request->telefon,
+          'anliegen'=>$request->anliegen,
+          'nachricht'=>$request->nachricht
+        );
+
+        Mail::send('emails.kontakt', $data, function ($m) use ($request) {
+            $m->from($request->email, $request->name);
+            $m->to("info@djabdul.de", "DJ Abdul")->subject($request->anliegen);
+        });
+
+        return view('kontakt', ['sent' => true]);
     }
 
 }

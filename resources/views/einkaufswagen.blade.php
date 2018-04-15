@@ -4,7 +4,6 @@
     <section id="content">
 
     <div class="content-wrap">
-
         <div class="container clearfix">
             <div class="heading-block center">
                 <h2>Warenkorb</h2>
@@ -16,58 +15,58 @@
                         <div class="col-md-12">
                                 <div class="col_one_third">
                                     <label for="name">Vorname<small>*</small>:</label>
-                                    <input type="text" id="name" name="name" value="" class="sm-form-control" required />
+                                    <input type="text" id="name" name="name" value="{{isset($order->name) ? $order->name : ''}}" class="sm-form-control" required />
                                 </div>
 
                                 <div class="col_one_third">
                                     <label for="lastname">Nachname:</label>
-                                    <input type="text" id="lastname" name="lastname" value="" class="sm-form-control" required/>
+                                    <input type="text" id="lastname" name="lastname" value="{{isset($order->lastname) ? $order->lastname : ''}}" class="sm-form-control" required/>
                                 </div>
 
                                 <div class="col_one_third col_last">
                                     <label for="email">Email:</label>
-                                    <input type="email" id="email" name="email" value="" class="sm-form-control" required/>
+                                    <input type="email" id="email" name="email" value="{{isset($order->email) ? $order->email : ''}}" class="sm-form-control" required/>
                                 </div>
 
                                 <div class="clear"></div>
 
                                 <div class="col_one_third">
                                     <label for="street">Straße mit Hausnummer:</label>
-                                    <input type="text" id="street" name="street" value="" class="sm-form-control" />
+                                    <input type="text" id="street" name="street" value="{{isset($order->street) ? $order->street : ''}}" class="sm-form-control" />
                                 </div>
 
                                 <div class="col_one_third">
                                     <label for="postcode">Postleitzahl:</label>
-                                    <input type="text" id="postcode" name="postcode" value="" class="sm-form-control" />
+                                    <input type="text" id="postcode" name="postcode" value="{{isset($order->postcode) ? $order->postcode : ''}}" class="sm-form-control" />
                                 </div>
 
                                 <div class="col_one_third col_last">
                                     <label for="city">Stadt:</label>
-                                    <input type="text" id="city" name="city" value="" class="sm-form-control" />
+                                    <input type="text" id="city" name="city" value="{{isset($order->city) ? $order->city : ''}}" class="sm-form-control" />
                                 </div>
 
                                 <div class="clear"></div>
 
                                 <div class="col_one_third">
                                     <label for="company">Firma:</label>
-                                    <input type="text" id="company" name="company" value="" class="sm-form-control" />
+                                    <input type="text" id="company" name="company" value="{{isset($order->company) ? $order->company : ''}}" class="sm-form-control" />
                                 </div>
 
                                 <div class="col_one_third">
                                     <label for="telephone">Telefon:</label>
-                                    <input type="text" id="telephone" name="telephone" value="" class="sm-form-control" required />
+                                    <input type="text" id="telephone" name="telephone" value="{{isset($order->telephone) ? $order->telephone : ''}}" class="sm-form-control" required />
                                 </div>
 
                                 <div class="col_one_third col_last">
                                     <label>Zeitraum:</label>
-                                    <input type="text" class="daterange4 sm-form-control" name="period" value="" required/>
+                                    <input type="text" class="daterange4 sm-form-control" name="period" value="{{isset($order->period) ? $order->period : ''}}" required/>
                                 </div>
 
                                 <div class="clear"></div>
 
                                 <div class="col_full">
                                     <label for="comment">Anmerkung <small>*</small></label>
-                                    <textarea class="sm-form-control" id="comment" name="comment" rows="6" cols="30"></textarea>
+                                    <textarea class="sm-form-control" id="comment" name="comment" rows="6" cols="30">{{isset($order->comment) ? $order->comment : ''}}</textarea>
                                 </div>
                         </div>
                         <div class="clear bottommargin"></div>
@@ -88,7 +87,7 @@
                                         @foreach (Cart::content() as $item)
                                             <tr class="cart_item">
                                                 <td class="cart-product-action">
-                                                    <a href="{{ url("Einkaufswagen/$item->id") }}"><i class="icon-trash" aria-hidden="true"></i> Entfernen</a>
+                                                    <button name="action" value="{{$item->id}}" type="submit" class="cancel deleteItemBtn"><i class="icon-trash" aria-hidden="true"></i> Entfernen</button>
                                                 </td>
 
                                                 <td class="cart-product-thumbnail">
@@ -107,11 +106,11 @@
                                         <tr class="cart_item">
                                             <td></td><td></td>
                                             <td class="cart-product-name">
-                                                <strong>Umsatzsteuer (21%)</strong>
+                                                <strong>Umsatzsteuer (19%)</strong>
                                             </td>
 
                                             <td class="cart-product-subtotal">
-                                                <span class="amount">€{{ Cart::subtotal() }}</span>
+                                                <span class="amount">€{{ Cart::tax() }}</span>
                                             </td>
                                         </tr>
                                         <tr class="cart_item">
@@ -144,9 +143,9 @@
                                 <div class="acc_content clearfix">Die von Ihnen gewünschten Produkte können von Ihnen nach Absprache abgeholt oder von mir gegen Aufpreis geliefert und angeschlossen werden.</div>
 
                                 <div class="acctitle"><i class="acc-closed icon-ok-circle"></i><i class="acc-open icon-ok-circle"></i>Bezahlung</div>
-                                <div class="acc_content clearfix">Nach Bestätigung der Verfügbarkeit und Absprache des Aufbaus / der Abholung erhalten Sie eine Rechnung und können ausstehenden Betrag auf den in der Rechnung befindlichen Kontonummer überweisen.</div>
+                                <div class="acc_content clearfix">Nach Bestätigung der Verfügbarkeit und Absprache des Aufbaus / der Abholung erhalten Sie eine Rechnung und können den ausstehenden Betrag auf den in der Rechnung befindlichen Kontonummer überweisen oder bei Abholung in Bar bezahlen.</div>
                             </div>
-                            <input type="submit" id="template-contactform-submit" value="Anfragen" class="button button-3d fright" />
+                            <input type="submit" id="template-contactform-submit" name="action" value="Anfragen" class="button button-3d fright" />
                         </div>
                     </div>
                 </form>

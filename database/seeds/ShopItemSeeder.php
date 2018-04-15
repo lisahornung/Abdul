@@ -28,7 +28,7 @@ class ShopItemSeeder extends Seeder
         $description = "Mega geiles Gerät!";
         $properties = ['bis 300 Personen', '3000 Watt', 'voll Transportable'];
         $category = "Pakete";
-        SeedShopItem('Bose Paket', 80, 1, $category, 'Paket für bis zu 150 Personen. Alles parat für Licht und Musik.', ['1x Bose Anlage', '1x Mixer', '1x Lichtstativ']);
+        SeedShopItem('Bose Paket', 110, 1, $category, 'Paket für bis zu 150 Personen. Alles parat für Licht und Musik.', ['1x Bose Anlage', '1x Mixer', '1x Lichtstativ']);
         SeedShopItem('White-Wedding Paket', 150, 1, $category, 'Paket für bis zu 200 Personen. Alles parat für Licht und Musik. Alle Artikel elegant in weiß!', ['1x Fohhn 2 in weiß', '1x Mixer', '1x Lichtstativ']);
         SeedShopItem('Fohhn Paket', 150, 1, $category, 'Power-Paket für bis zu 300 Personen. Alles parat für Licht und Musik.', ['1x Fohhn 3 Anlage', '1x Mixer', '1x Lichtstativ']);
 
@@ -41,12 +41,13 @@ class ShopItemSeeder extends Seeder
         SeedShopItem('Fohhn Easy Port FP 22 CD', 40, 2, $category, '', ['Akku betrieben!', '2 x aktiv Box', 'integrierter CD Player']);
         SeedShopItem('HK Audio Actor DX', 100, 1, $category, '', ['3200W RMS', '2x mid-high Töner', '2x aktiver Bass', '2x passiver Bass']);
         SeedShopItem('HK Audio L5 112 XA', 30, 4, $category, '', ['Mietung als Paar', '1000 Watt', '136db Max']);
-        SeedShopItem('Bose L1 mit B2', 80, 3, $category, '', ['bis 300 Personen', 'leicht zu transportieren', 'Tone Match', 'Bose']);
-        SeedShopItem('Bose L1 Compact', 30, 2, $category, '', ['bis 100 Personen', 'leicht zu transportieren', 'Tone Match', 'Bose']);
+        SeedShopItem('Bose L1 mit B2', 85, 3, $category, '', ['bis 300 Personen', 'leicht zu transportieren', 'Tone Match', 'Bose']);
+        SeedShopItem('Bose L1 Compact', 45, 2, $category, '', ['bis 100 Personen', 'leicht zu transportieren', 'Tone Match', 'Bose']);
         SeedShopItem('Yamaha C115 V', 50, 2, $category, '', ['Mietung als Paar', '500W', 'Speaker: 15"/2"', '30,0kg']);
         SeedShopItem('Yamaha MSR 100', 40, 2, $category, '', ['Mietung als Paar', '100W RMS', 'Speaker: 8"/1"', '11kg']);
         SeedShopItem('Yamaha DXR 15', 60, 2, $category, '', ['Mietung als Paar', '1100W', 'Speaker 15"/1"', '22,5kg']);
         SeedShopItem('JBL JRX 225', 60, 2, $category, '', ['Mietung als Paar', '500W RMS', 'Speaker: 15"/1"', '42,6kg']);
+        SeedShopItem('Yamaha DXR8', 25, 1, $category, '', ['Mietung als Paar', '1100 Watt', 'Speaker: 8"/1"', '13,5kg']);
 
         $category = "DJ Technik und Mixer";
         SeedShopItem('Traktor Kontrol S2', 30, 1, $category, '', ['2-channel', 'DJ Controller', 'Native Instruments', 'Traktor']);
@@ -65,6 +66,7 @@ class ShopItemSeeder extends Seeder
         SeedShopItem('Pioneer CDJ-2000NXS', 65, 1, $category, '', ['DJ Multiplayer']);
         SeedShopItem('Pioneer CDJ-400', 25, 6, $category, '', ['DJ Multiplayer']);
         SeedShopItem('Pioneer CDJ-1000', 25, 5, $category, '', ['DJ Multiplayer']);
+        SeedShopItem('Pioneer DDJ-SZ', 50, 1, $category, '', ['DJ Controller']);
         SeedShopItem('Allen & Heath Xone:92 DJ-Mixer', 60, 1, $category, '', ['4-channel', 'Club Mixer']);
         SeedShopItem('Allen & Heath ZED-22FX', 60, 1, $category, '', ['16 Mic/Line Eingänge', '3 dual stereo Eingänge', 'Band Mixer']);
         SeedShopItem('Allen & Heath ZED-10FX', 20, 1, $category, '', ['4 Mic/Line Eingänge', '2 Dual Stero Eingänge', 'Band Mixer']);

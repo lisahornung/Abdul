@@ -17,7 +17,9 @@
                             <div class="product {{ str_replace(' ', '_', $shopItem['category']) }} clearfix">
                                 <div class="product-image">
                                     <a href="{{ Route('shop_item', ['id' =>  $shopItem['id']]) }}" class="item-quick-view" data-lightbox="ajax"><img src="{{ asset('img/vermietung/shop/' . str_replace(' ', '_', $shopItem['name']). '_1.jpg') }}" alt="{{ $shopItem['name'] }}"></a>
-                                    <a href="{{ Route('shop_item', ['id' =>  $shopItem['id']]) }}" class="item-quick-view" data-lightbox="ajax"><img src="{{ asset('img/vermietung/shop/' . str_replace(' ', '_', $shopItem['name']). '_2.jpg') }}" alt="{{ $shopItem['name'] }}"></a>
+                                    @if(file_exists('img/vermietung/shop/' . str_replace(' ', '_', $shopItem['name']). '_2.jpg'))
+                                        <a href="{{ Route('shop_item', ['id' =>  $shopItem['id']]) }}" class="item-quick-view" data-lightbox="ajax"><img src="{{ asset('img/vermietung/shop/' . str_replace(' ', '_', $shopItem['name']). '_2.jpg') }}" alt="{{ $shopItem['name'] }}"></a>
+                                    @endif
                                     {!! in_array($shopItem['id'], $itemsInCart) ? '<div class="sale-flash"><i class="icon-shopping-cart"></i></div>' : '' !!}
                                     <div class="product-overlay">
 
@@ -59,7 +61,7 @@
                             <ul class="custom-filter" data-container="#shop" data-active-class="active-filter">
                                 <li class="widget-filter-reset active-filter"><a href="#" data-filter="*">Alles</a></li>
                                 <li><a href="#" data-filter=".Pakete">Pakete</a></li>
-                                <li><a href="#" data-filter=".Anlage">Anlage</a></li>
+                                <li><a href="#" data-filter=".Anlage">Anlagen</a></li>
                                 <li><a href="#" data-filter=".Beleuchtung">Beleuchtung</a></li>
                                 <li><a href="#" data-filter=".DJ_Technik_und_Mixer">DJ Technik und Mixer</a></li>
                                 <li><a href="#" data-filter=".Mikrofone">Mikrofone</a></li>

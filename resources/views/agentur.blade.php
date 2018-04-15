@@ -87,11 +87,24 @@
                     <li><a href="https://www.commerzbank.de/"><img src="img/commerzbank.jpg" alt="Commerzbank"></a></li>
                     <li><a href="http://www.edag.de/"><img src="img/edag.jpg" alt="Edag"></a></li>
                     <li><a href="http://www.foellsch-foll-hinein.de/"><img src="img/FKG.jpg" alt="Fuldaer Karneval Gesellschaft"></a></li>
+                    <li><a href="http://www.alpina-farben.de/"><img src="img/referenzen/alpina.jpg" alt="Alpina"></a></li>
+                    <li><a href="https://www.thebodyshop.com/"><img src="img/referenzen/thebodyshop.jpg" alt="The Body Shop"></a></li>
+                    <li><a href="https://www.duoplast.ag/"><img src="img/referenzen/duoplast.jpg" alt="Duoplast"></a></li>
+                    <li><a href="http://neuro-spine-center.com/cms2/index.php"><img src="img/referenzen/neuroSpineCenter.jpg" alt="Neuro Spine Center"></a></li>
+                    <li><a href="https://www.galeria-kaufhof.de/"><img src="img/referenzen/galeriaKaufhof.jpg" alt="Galeria Kaufhof"></a></li>
+                    <li><a href="https://www.alt-partner.de/"><img src="img/referenzen/altPartner.jpg" alt="Alt & Partner"></a></li>
+
+                    <li><a href="http://midas-gmbh.de/en/"><img src="img/referenzen/midas.jpg" alt="Midas"></a></li>
+                    <li><a href="http://uth-gmbh.com/"><img src="img/referenzen/uthGmbh.jpg" alt="Uth Gmbh"></a></li>
+                    <li><a href="http://www.barockstadt-fulda-triathlon.de/"><img src="img/referenzen/barockstadtFuldaTriathlon.jpg" alt="Barockstadt Fulda Triathlon"></a></li>
+                    <li><a href="http://www.mpp24.eu/"><img src="img/referenzen/modusPflegeProjekt24.jpg" alt="Modus Pflegeprojekt 24"></a></li>
+                    <li><a href="https://www.fronius.com/"><img src="img/referenzen/fronius.jpg" alt="Fronius"></a></li>
+                    <li><a href="http://www.zeichenakademie.de/"><img src="img/referenzen/zeichenakademie.jpg" alt="Zeichenakademie Hanau"></a></li>
                 </ul>
             </div>
             <div class="content-wrap">
                 <div class="container clearfix">
-                    <h3>Statistiks:</h3>
+                    <h3>Statistiken:</h3>
                     <div class="col_one_fourth nobottommargin center" data-animate="bounceIn">
                         <i class="i-plain i-xlarge divcenter icon-calendar3"></i>
                         <div class="counter counter-lined"><span data-from="100" data-to="846" data-refresh-interval="50" data-speed="2000"></span>+</div>
@@ -106,7 +119,7 @@
 
                     <div class="col_one_fourth nobottommargin center" data-animate="bounceIn" data-delay="400">
                         <i class="i-plain i-xlarge divcenter nobottommargin icon-line2-playlist"></i>
-                        <div class="counter counter-lined"><span data-from="10" data-to="60000" data-refresh-interval="25" data-speed="3500"></span>+</div>
+                        <div class="counter counter-lined"><span data-from="10" data-to="150000" data-refresh-interval="25" data-speed="3500"></span>+</div>
                         <h5>Songs</h5>
                     </div>
 
