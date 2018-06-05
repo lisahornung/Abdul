@@ -12,4 +12,4 @@ php artisan serve
 ```
 
 # Laravel
-The project is based on the php (Laravel Framework)[https://laravel.com/docs/master], checkout the docs if you don't know what to do :).
+The project is based on the php [Laravel Framework](https://laravel.com/docs/master), checkout the docs if you don't know what to do :).
